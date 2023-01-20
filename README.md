@@ -1,4 +1,4 @@
-[![SoftNet Church CMS](./screenshots/preview.png)](https://domain.com/)
+<!-- [![React MERN Admin App](./screenshots/preview.png)](https://domain.com/) -->
 
 <div id="top"></div>
 
@@ -43,7 +43,7 @@
 1. Clone the repo
 
    ```sh
-   git clone -b dev --single-branch https://github.com/
+   git clone -b main --single-branch https://github.com/KOFI-GYIMAH/mern-admin-client.git
    ```
 
 2. Install Packages

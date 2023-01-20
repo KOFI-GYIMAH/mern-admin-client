@@ -19,7 +19,7 @@ import { setMode } from '~/state';
 import FlexBetween from '../FlexBetween';
 import profileImage from '~/assets/images/profile.jpeg'
 
-export const Navbar = () => {
+export const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
 
@@ -33,7 +33,7 @@ export const Navbar = () => {
     >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <FlexBetween>
-          <IconButton onClick={() => console.log('Hi')}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
 
@@ -52,16 +52,14 @@ export const Navbar = () => {
 
         <FlexBetween>
           <IconButton onClick={() => dispatch(setMode())}>
-            {
-              theme.palette.mode === 'dark' ? (
-                <DarkModeOutlined sx={{ fontSize: "25px"}} />
-              ) : (
-                  <LightModeOutlined sx={ { fontSize: "25px"}} />
-              )
-            }
+            {theme.palette.mode === 'dark' ? (
+              <DarkModeOutlined sx={{ fontSize: '25px' }} />
+            ) : (
+              <LightModeOutlined sx={{ fontSize: '25px' }} />
+            )}
           </IconButton>
           <IconButton>
-            <SettingsOutlined sx={{ fontSize: "25px"}} />
+            <SettingsOutlined sx={{ fontSize: '25px' }} />
           </IconButton>
         </FlexBetween>
       </Toolbar>
